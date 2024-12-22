@@ -1,0 +1,269 @@
+@media only screen and (max-width: 1200px) {
+    #navigation ul {
+        display: none;
+    }
+
+    .navbar-user-link {
+        display: none;
+    }
+
+    .logo-name {
+        padding-left: 20px;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    @media only screen and (max-width: 1050px) {
+        .loan-advisor-parent {
+            flex-direction: column;
+        }
+
+        .loan-advisor-description {
+            text-align: center;
+        }
+
+        .loan-advisor-user-information {
+            margin: 0 auto;
+        }
+
+        .loan-advisor-house {
+            margin: 0 auto;
+        }
+        .blog-card {
+            width: 48%;
+        }
+    }
+
+    .loan-program-description h3 {
+        font-size: 16px;
+    }
+
+    .loan-program-description p {
+        font-size: 14px;
+    }
+
+    .loan-program-points p {
+        font-size: 11px;
+    }
+
+    .images-link p {
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .loan-advisor-description {
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .loan-advisor-user-information {
+        margin: 0 auto;
+    }
+
+    .loan-advisor-house {
+        margin: 0 auto;
+    }
+
+    .loan-program {
+        width: 48%;
+
+    }
+
+    .loan-fund-parent {
+        flex-direction: column;
+    }
+    .apply-parent {
+        flex-direction: column;
+    }
+    .apply-description {
+        max-width: unset;
+        text-align: center;
+    }
+    .contact p {
+        justify-content: center;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .loan-advisor-house {
+        display: none;
+    }
+
+    .know-us-img {
+        display: none;
+    }
+
+    .know-us-design-img {
+        display: none;
+    }
+
+    .know-us-parent {
+        justify-content: center;
+    }
+
+    .heading {
+        max-width: unset;
+    }
+
+    .heading img {
+        padding: 30px 0px;
+    }
+
+    .images-link-parent {
+        flex-direction: column;
+        gap: 70px;
+    }
+
+    .default-parent {
+        flex-direction: column;
+    }
+
+    .footer-parent {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .loan-program {
+        width: 92%;
+    }
+
+    .default-description {
+        max-width: unset;
+    }
+   
+}
+
+@media only screen and (max-width: 576px) {
+    .loan-advisor-heading {
+        font-size: 20px;
+    }
+
+    .loan-advisor-paragraph {
+        font-size: 13px;
+        padding-top: 20px;
+        padding-bottom: 35px;
+
+    }
+
+    .loan-program-parent {
+        justify-content: center;
+    }
+
+    .loan-fund-description h1 {
+        font-size: 25px;
+    }
+
+    .loan-fund-description p {
+        font-size: 13px;
+        padding: 30px 0px;
+    }
+
+    .default-heading {
+        font-size: 25px;
+        padding: 30px 0px;
+    }
+
+    .default-paragraph {
+        font-size: 13px;
+    }
+
+    .rate-sheet-link {
+        padding: 30px 0px;
+    }
+
+    .footer-quick-links {
+        gap: 10px;
+    }
+
+    .footer-quick-links ul {
+        gap: 14px;
+    }
+
+    .footer-description {
+        gap: 20px;
+    }
+
+    .experience-parent h1 {
+        font-size: 20px;
+    }
+
+    .experience-parent i {
+        font-size: 11px;
+    }
+
+    .experience-parent p {
+        font-size: 13px;
+    }
+
+    .default-description {
+        max-width: unset;
+    }
+
+    .form-parent {
+        min-width: unset;
+    }
+
+    .form-group {
+        flex-direction: column;
+    }
+
+    .form-heading {
+        font-size: 14px;
+    }
+
+    .form-text,
+    .form-email,
+    .form-tel {
+        width: 88%;
+    }
+
+    .loan-advisor-user-information {
+        width: 97%;
+    }
+
+    .broker-form-text,
+    .broker-form-email,
+    .broker-form-tel {
+        width: 97%;
+    }
+
+    .submit-button {
+        width: 92%;
+    }
+
+    .common-heading {
+        font-size: 20px;
+    }
+
+    .loan-program {
+        width: 92%;
+    }
+
+    .loan-fund-img {
+        width: 100%;
+    }
+
+    .loan-fund-img img {
+        width: 100%;
+    }
+
+    .images-link-parent {
+        flex-direction: column;
+        gap: 70px;
+    }
+    .property-form-text {
+        width: 97%;
+    }
+    .contact p {
+        font-size: 13px;
+    }
+    .blog-card {
+        width: 97%;
+    }
+    .investor-description img {
+        width: 100%;
+    }
+}

@@ -1,0 +1,1019 @@
+/* home-section start */
+
+
+
+
+
+@font-face {
+    font-family: "Gotham";
+    src: url(../fonts/Gotham-Light.otf);
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "Gotham";
+    src: url(../fonts/Gotham-Medium.ttf);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Gotham";
+    src: url(../fonts/Gotham-Medium.ttf);
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Gotham";
+    src: url(../fonts/Gotham-Bold.otf);
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Gotham";
+    src: url(../fonts/Gotham-Bold.otf);
+    font-weight: 700;
+}
+
+
+@font-face {
+
+    font-family: "Gotham";
+    src: url(../fonts/Gotham-Black.otf);
+    font-weight: 900;
+}
+
+body,
+body * {
+    margin: 0;
+    padding: 0;
+    font-family: "dm sans";
+}
+
+.container {
+    max-width: 1200px !important;
+    width: 95% !important;
+    margin: 0 auto;
+    padding: 0 !important;
+}
+
+*,
+::after,
+::before {
+    box-sizing: unset !important;
+}
+
+#navigation {
+    z-index: 2;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    overflow: hidden;
+
+}
+
+#navigation ul {
+    display: flex;
+    gap: 30px;
+    padding: 0 !important;
+
+}
+
+#navigation ul li {
+    list-style: none;
+    padding: 0 !important;
+
+}
+
+#navigation ul li a {
+    text-decoration: none;
+    color: rgba(120, 136, 147, 1);
+    font-weight: 500;
+    font-size: 16px;
+    transition: 0.3s ease;
+}
+
+#navigation ul li a:hover,
+#navigation ul li a.active {
+    color: rgba(27, 102, 222, 1);
+
+}
+
+.header-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 40px 0px;
+}
+
+.logo-name {
+    text-align: center;
+
+}
+
+.logo-name h3 {
+    color: rgba(34, 34, 34, 1);
+    font-size: 20px;
+    margin: 0 !important;
+    line-height: 22px;
+    font-family: "Gotham";
+    font-weight: 900;
+}
+
+.navbar-user-link {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.navbar-link {
+    text-decoration: none;
+    color: rgba(120, 136, 147, 1);
+    font-weight: 500;
+    font-size: 16px;
+    transition: 0.3s ease;
+}
+
+.navbar-link:hover {
+    color: rgba(27, 102, 222, 1);
+}
+
+.dark-btn {
+    min-width: 173px;
+    height: 44px;
+    border-radius: 40px;
+    border: none;
+    font-weight: 700;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(27, 102, 222, 1);
+    transition: 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+
+}
+
+.dark-btn:hover {
+    background-color: rgba(22, 84, 184, 1);
+    color: rgba(110, 227, 220, 1);
+
+}
+
+.hamburger {
+    display: none;
+}
+
+.hamburger img {
+    width: 45px;
+}
+
+.loan-advisor-section {
+    background-image: linear-gradient(180deg, #D8F1EA 0%, #F8F5EE 100%);
+    padding-top: 260px;
+
+}
+
+.loan-advisor-parent {
+    display: flex;
+    overflow: hidden;
+}
+
+
+.common-heading {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 40px;
+    font-family: "Gotham";
+    margin: 0px !important;
+    box-sizing: unset !important;
+}
+
+.common-paragraph {
+    padding-top: 35px;
+    color: rgba(34, 34, 34, 1);
+    font-size: 18px;
+    font-weight: 500;
+    padding-bottom: 60px;
+    margin: 0px !important;
+}
+
+.loan-advisor-user-information {
+    width: 388px;
+    background-color: rgba(215, 230, 241, 1);
+    text-align: center;
+    border: 2px solid rgba(83, 172, 255, 1);
+    border-radius: 10px;
+    padding-bottom: 20px;
+
+
+}
+
+.form-heading {
+    padding: 20px 0px;
+    color: rgba(27, 102, 222, 1);
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0px !important;
+}
+
+.form-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.form-text,
+.form-email,
+.form-tel {
+    width: 348px;
+    height: 40px;
+    border: none;
+    border-radius: 4px;
+    color: rgba(120, 136, 147, 1);
+    padding-left: 10px;
+    font-size: 14px !important;
+    font-weight: 400;
+    margin: 0 !important;
+    outline: none;
+}
+
+.submit-button {
+    min-width: 348px;
+}
+
+.submit-button:hover {
+    background-color: rgba(22, 84, 184, 1);
+    color: rgba(110, 227, 220, 1);
+}
+
+.loan-advisor-house {
+    position: relative;
+    top: 57px;
+}
+
+.show-more-link {
+    margin: auto;
+    width: 20px;
+    padding-top: 56px;
+}
+
+.know-us-section {
+    background-color: rgba(248, 244, 238, 1);
+}
+
+.know-us-parent {
+    padding-top: 100px;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.heading {
+    text-align: center;
+    max-width: 51%;
+}
+
+.heading img {
+    padding: 40px 0px;
+}
+
+.heading span {
+    color: rgba(27, 102, 222, 1);
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.heading .common-paragraph {
+    font-size: 16px;
+    font-weight: 500;
+    padding: 0px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.know-us-design-img {
+    padding-top: 190px;
+
+}
+
+.loan-program-section {
+    background-color: rgba(248, 244, 238, 1);
+}
+
+.heading2 {
+    text-align: center;
+    padding-top: 69px;
+}
+
+.loan-program-parent {
+    display: flex;
+    gap: 20px;
+    padding-top: 75px;
+    padding-bottom: 40px;
+    overflow: hidden;
+    flex-wrap: wrap;
+}
+
+.loan-program {
+    width: 18%;
+    background-color: rgba(215, 230, 255, 1);
+    border: 2px solid rgba(83, 172, 255, 1);
+    border-radius: 10px;
+    transition: 0.3s ease;
+
+}
+
+.loan-program-img {
+    padding: 41px 0px 31px 25px;
+
+}
+
+.loan-program-description {
+    padding-left: 20px;
+    padding-bottom: 20px;
+}
+
+.loan-program-description h3 {
+    padding-bottom: 10px;
+    font-family: "Gotham";
+    font-size: 20px;
+    font-weight: 900;
+    color: rgba(27, 102, 222, 1);
+}
+
+.loan-program-description p {
+    color: rgba(27, 102, 222, 1);
+    font-size: 18px;
+    font-weight: 500;
+    padding-bottom: 40px;
+    margin: 0 !important;
+}
+
+.loan-program-points {
+    display: flex;
+    gap: 4px;
+    overflow: hidden;
+}
+
+.loan-program-points img {
+    position: relative;
+    top: 3px;
+    width: 15px;
+    height: 15px;
+}
+
+.loan-program-points p {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(34, 34, 34, 1);
+    padding-bottom: 12px;
+    margin: 0 !important;
+}
+
+.loan-program-img2 {
+    padding: 34px 0px 24px 30px;
+}
+
+.loan-program-img3 {
+    padding: 24px 0px 1px 20px;
+}
+
+.loan-program-img4 {
+    padding: 26px 0px 12px 24px;
+}
+
+.loan-program-img5 {
+    padding: 38px 0px 23px 21px;
+}
+
+.loan-program-description .paragraph {
+    padding-bottom: 12px;
+}
+
+.loan-program:hover {
+    background-color: rgba(224, 231, 233, 1);
+    transform: translatey(-5px);
+}
+
+.loan-fund-section {
+    background-color: rgba(27, 102, 222, 1);
+}
+
+.loan-fund-parent {
+    display: flex;
+    padding: 40px 0px;
+    gap: 80px;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+.loan-fund-description h1 {
+    color: rgba(255, 255, 255, 1);
+    font-size: 32px;
+    font-weight: 700;
+    font-family: "Gotham";
+    margin: 0 !important;
+}
+
+.loan-fund-description p {
+    padding: 40px 0px;
+    color: rgba(255, 255, 255, 1);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 28px;
+    margin: 0 !important;
+}
+
+.btn-light {
+    width: 213px;
+    height: 44px;
+    border-radius: 40px;
+    background-color: rgba(255, 255, 255, 1);
+    color: rgba(27, 102, 222, 1);
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border: 2px solid rgba(255, 255, 255, 1);
+    box-sizing: border-box;
+}
+
+.btn-light:hover {
+    background-color: rgba(27, 102, 222, 1);
+    border: 2px solid rgba(255, 255, 255, 1);
+    color: rgba(255, 255, 255, 1);
+    ;
+}
+
+.images-link-section {
+    background-color: rgba(248, 244, 238, 1);
+}
+
+.images-link-parent {
+    display: flex;
+    justify-content: center;
+    gap: 140px;
+    padding-top: 80px;
+    padding-bottom: 60px;
+    overflow: hidden;
+}
+
+.images-link {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.images-link img {
+    background-color: rgba(215, 230, 255, 1);
+    border-radius: 50%;
+    padding: 31px 32px;
+    transition: 0.3s ease;
+}
+
+.images-link img:hover {
+    background-color: rgba(224, 231, 233, 1);
+}
+
+.images-link p {
+    color: rgba(120, 136, 147, 1);
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0 !important;
+}
+
+.broker-section {
+    background-color: rgba(248, 244, 238, 1);
+}
+
+.default-parent {
+    display: flex;
+    padding-top: 60px;
+    padding-bottom: 120px;
+    justify-content: center;
+    gap: 45px;
+
+}
+
+.default-description {
+    max-width: 462px;
+}
+
+
+.default-heading {
+    padding: 40px 0px;
+    font-family: "Gotham";
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0 !important;
+}
+
+.default-paragraph {
+    color: rgba(34, 34, 34, 1);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+    margin: 0 !important;
+}
+
+.rate-sheet-link {
+    padding: 40px 0px;
+}
+
+.rate-sheet-link p {
+    margin: 0px !important;
+}
+
+.default-link {
+    color: rgba(27, 102, 222, 1);
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0px !important;
+}
+
+.form-parent {
+    min-width: 487px;
+    padding-top: 40px;
+    background-color: rgba(224, 231, 233, 1);
+    border-radius: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 40px;
+}
+
+.broker-form h3 {
+    font-size: 18px;
+    padding-bottom: 20px;
+    padding-top: 0px;
+}
+
+.default-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    gap: 20px;
+}
+
+.form-paragraph {
+    padding-bottom: 20px;
+    color: rgba(120, 136, 147, 1);
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0 !important;
+}
+
+.radio-form {
+    display: flex;
+    gap: 40px;
+}
+
+.radio-form label {
+    color: rgba(27, 102, 222, 1);
+    font-size: 14px;
+    font-weight: 700;
+    display: flex;
+    gap: 10px
+}
+
+.radio-form label input {
+    width: 20px;
+    height: 20px;
+    outline: 2px auto rgba(27, 102, 222, 1);
+}
+
+.option-selection,
+.deal-summary {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    color: rgba(120, 136, 147, 1);
+    border: none;
+    border-radius: 4px;
+    box-sizing: border-box !important;
+    outline: none;
+}
+
+.broker-form-text,
+.broker-form-email,
+.broker-form-tel {
+    width: 48%;
+    outline: none;
+}
+
+
+
+.deal-summary {
+    height: 200px;
+    resize: none;
+}
+
+.sold-deal-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.experience-section {
+    background-color: rgba(215, 230, 255, 1);
+
+}
+
+.experience-parent {
+    padding: 60px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.experience-parent h1 {
+    text-align: center;
+    color: rgba(27, 102, 222, 1);
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 40px;
+    font-family: "Gotham";
+    margin: 0 !important;
+}
+
+.experience-parent i {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 28px;
+}
+
+.experience-parent p {
+    color: rgba(120, 136, 147, 1);
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0 !important;
+}
+
+.experience-parent span {
+    font-weight: 700;
+}
+
+.footer-section {
+    background-color: rgba(27, 102, 222, 1);
+}
+
+.footer-parent {
+    padding: 60px 0px;
+    display: flex;
+    justify-content: space-around;
+    overflow: hidden;
+}
+
+.footer-description {
+    display: flex;
+    gap: 24px;
+    flex-direction: column;
+    color: rgba(248, 244, 238, 1);
+    min-width: 469px;
+}
+
+.footer-description h3 {
+    font-size: 20px;
+    font-family: "Gotham";
+    font-weight: 900;
+    margin: 0 !important;
+}
+
+.footer-description p {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0 !important;
+}
+
+.footer-description span {
+    color: rgba(110, 227, 220, 1);
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.footer-paragraph {
+    color: rgba(83, 172, 255, 1);
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0 !important;
+}
+
+.footer-quick-links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.footer-quick-links ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    list-style: none;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.links {
+    text-decoration: none;
+    color: rgba(110, 227, 220, 1);
+    font-size: 16px;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.links:hover {
+    color: rgba(255, 255, 255, 1);
+}
+
+.footer-btn {
+    width: 173px;
+    background-color: rgba(215, 230, 255, 1);
+    color: rgba(27, 102, 222, 1);
+    border: 2px solid rgba(27, 102, 222, 1);
+}
+
+.footer-btn:hover {
+    color: rgba(27, 102, 222, 1);
+    background-color: rgba(255, 255, 255, 1);
+    border: 2px solid rgba(255, 255, 255, 1);
+}
+
+/* home-section end */
+
+/* apply-section star */
+
+.apply-section {
+    padding-top: 260px;
+    background-image: linear-gradient(180deg, #D8F1EA 0%, #F8F5EE 100%);
+}
+
+.apply-description {
+    max-width: 487px;
+}
+.apply-description img {
+    width: 100%;
+}
+.apply-heading {
+    padding-top: 0px;
+}
+
+
+.apply-paragraph {
+    padding-bottom: 40px;
+}
+
+.contact {
+    border-radius: 10px;
+    background-color: rgba(224, 231, 233, 1);
+    padding: 20px 0px 20px 20px;
+    margin-top: 5px;
+}
+
+.contact h1 {
+    margin: 0 !important;
+    font-size: 20px;
+    font-weight: 900;
+    color: rgba(34, 34, 34, 1);
+    font-family: "Gotham";
+    padding-bottom: 10px;
+}
+
+.contact p {
+    margin: 0 !important;
+    display: flex;
+    gap: 20px;
+    color: rgba(27, 102, 222, 1);
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.apply-form {
+    background-color: rgba(215, 230, 241, 1);
+    border: 2px solid rgba(83, 172, 255, 1);
+}
+
+.property-form-text {
+    width: 100%;
+}
+
+.default-input {
+    padding: 10px;
+    background-color: white;
+    border-radius: 4px;
+}
+
+.loan-input-heading {
+    font-weight: 400;
+    color: rgba(34, 34, 34, 1);
+    display: block;
+}
+
+.loan-purpose {
+    width: 100%;
+    height: 100px;
+    font-size: 14px;
+    letter-spacing: 0.28px;
+    border: none;
+    outline: none;
+    resize: none;
+    font-weight: 400;
+}
+
+.loan-purpose::placeholder {
+    color: rgba(120, 136, 147, 1);
+
+}
+
+.hear-text {
+    width: 100%;
+
+}
+
+.hear-text:focus {
+    outline: none;
+}
+
+/* apply-section end  */
+
+
+
+/* investor-section start */
+.investor-heading {
+    color: rgba(27, 102, 222, 1);
+    font-family: "Gotham";
+    font-weight: 900;
+    font-size: 20px;
+    padding-bottom: 20px;
+    margin: 0 !important;
+}
+
+.default-label {
+    padding-bottom: 10px;
+    margin: 0 !important;
+    font-size: 14px;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+}
+
+.default-label-sub-heading {
+    color: rgba(120, 136, 147, 1);
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.28px;
+}
+
+.checkbox-group {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.checkbox-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.checkbox-input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(27, 102, 222, 1);
+    border-radius: 3px;
+    cursor: pointer;
+    background-color: white;
+
+}
+
+.checkbox-label {
+    font-size: 14px;
+    color: rgba(120, 136, 147, 1);
+    font-weight: 400;
+    letter-spacing: 0.28px;
+}
+
+.investor-hear::placeholder {
+    color: rgba(34, 34, 34, 1);
+}
+
+/* invester-section end */
+
+
+/* blog-section star */
+.blog-section {
+    background-image: linear-gradient(180deg, #D8F1EA 0%, #F8F5EE 100%);
+    padding-top: 260px;
+    min-height: calc(100vh - 600px);
+}
+
+.blog-heading {
+    text-align: center;
+    padding-bottom: 40px;
+}
+
+.blog-images {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 40px 0px;
+
+}
+
+.blog-card {
+    width: 32%;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 1);
+    transition: 0.3s ease;
+}
+
+.blog-card:hover {
+    background-color: rgba(238, 244, 246, 1);
+}
+
+.blog-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 195px;
+}
+
+.blog-image {
+    width: 100%;
+    height: 290px;
+    object-fit: cover;
+}
+
+
+.blog-title {
+    font-size: 20px;
+    color: rgba(27, 102, 222, 1);
+    font-weight: 900;
+    font-family: "Gotham";
+    margin: 0 !important;
+}
+
+.blog-description {
+    font-size: 16px;
+    line-height: 28px;
+    color: rgba(34, 34, 34, 1);
+    font-weight: 400;
+    padding: 10px 0px;
+    margin: 0 !important;
+}
+
+.blog-author {
+    font-size: 16px;
+    color: rgba(120, 136, 147, 1);
+    font-weight: 500;
+    margin-top: auto;
+}
+
+.blog-tab {
+    border: 2px solid rgba(27, 102, 222, 1);
+    border-radius: 20px;
+    cursor: pointer;
+    display: inline-block;
+    padding: 5px 10px;
+}
+
+
+.blog-tab.selected, .blog-tab:hover {
+    background-color: rgba(27, 102, 222, 1);
+    color: #fff;
+}
+
+.blog-searching {
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.blog-searching .spinner-grow {
+    width: 200px;
+    height: 200px;
+}
+
+.sr-only {
+    display: none;
+}
