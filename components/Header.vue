@@ -1,14 +1,25 @@
 <script setup>
 
+import { ref } from 'vue';
+
+
+const navOpen = ref(false);
+
+
+function clickNav() {
+
+    navOpen.value = navOpen.value === false ? true : false
+
+}
+
 </script>
 
 <template>
-
-<header id="navigation">
+    <header id="navigation" :class="[{'nav-open': navOpen}]">
         <div class="container">
             <div class="header-wrapper">
                 <ul class="mb-0">
-                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="/" class="active">Home</a></li>
                     <li><a href="/#about-us">About</a></li>
                     <li><a href="/#loan-program">Programs</a></li>
                     <li><a href="/#broker">Brokers</a></li>
@@ -27,15 +38,16 @@
                     <a href="/apply" class="dark-btn">APPLY HERE</a>
                 </div>
                 <div class="hamburger">
-                    <a href="#">
+                    <div class="close-btn cursor-pointer" v-if="navOpen">
+                        <span  @click="clickNav()"><img src="~/assets/images/close.png" alt=""></span>
+                    </div>
+                    <span class="cursor-pointer" v-else @click="clickNav()">
                         <img src="~/assets/images/hamburger.png" alt="">
-                    </a>
+                    </span>
                 </div>
             </div>
         </div>
     </header>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

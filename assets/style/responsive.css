@@ -1,6 +1,7 @@
 @media only screen and (max-width: 1200px) {
     #navigation ul {
         display: none;
+        padding-top: 20px !important;
     }
 
     .navbar-user-link {
@@ -13,6 +14,27 @@
 
     .hamburger {
         display: block;
+    }
+
+    .nav-open ul {
+        gap: 30px;
+        padding: 0 !important;
+        position: absolute;
+        background: #fff;
+        left: 0;
+        right: 0;
+        display: flex !important;
+        flex-direction: column;
+        top: 0;
+    }
+
+    .nav-open .navbar-user-link {
+        display: flex !important;
+        position: relative;
+        flex-direction: column;
+        gap: 20px;
+        top: 20px;
+        right: 75px;
     }
 
     @media only screen and (max-width: 1050px) {
@@ -31,6 +53,7 @@
         .loan-advisor-house {
             margin: 0 auto;
         }
+
         .blog-card {
             width: 48%;
         }
@@ -50,6 +73,28 @@
 
     .images-link p {
         text-align: center;
+    }
+
+    .close-btn {
+        display: block;
+        position: absolute;
+        top: 50px;
+        right: 24px;
+    }
+
+    .nav-open .header-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 40px 0;
+        height: 100vh;
+        background-color: #ffffff;
+    }
+
+    .nav-open ul {
+        align-items: center;
+        height: calc(100vh - 120px);
+        padding-top: 120px !important;
     }
 }
 
@@ -75,13 +120,16 @@
     .loan-fund-parent {
         flex-direction: column;
     }
+
     .apply-parent {
         flex-direction: column;
     }
+
     .apply-description {
         max-width: unset;
         text-align: center;
     }
+
     .contact p {
         justify-content: center;
     }
@@ -133,7 +181,7 @@
     .default-description {
         max-width: unset;
     }
-   
+
 }
 
 @media only screen and (max-width: 576px) {
@@ -254,15 +302,19 @@
         flex-direction: column;
         gap: 70px;
     }
+
     .property-form-text {
         width: 97%;
     }
+
     .contact p {
         font-size: 13px;
     }
+
     .blog-card {
         width: 97%;
     }
+
     .investor-description img {
         width: 100%;
     }
