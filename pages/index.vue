@@ -419,21 +419,39 @@ onMounted(() => {
                 <div class="form-parent broker-form">
                     <h3 class="form-heading">Apply now and we will get in touch</h3>
                     <form class="default-form">
+
                         <div class="form-group">
-                            <input class="form-text broker-form-text" type="text" placeholder="Name (required)"
-                                required>
-                            <input class="form-text broker-form-text" type="text" placeholder="Last name (required)"
-                                required>
+                            <input
+                                class="form-text broker-form-text"
+                                type="text"
+                                placeholder="Name (required)"
+                                v-model="mainStore.ckl_apply_now_in_touch.first_name"
+                            />
+                            <input
+                                class="form-text broker-form-text"
+                                type="text"
+                                placeholder="Last name (required)"
+                                v-model="mainStore.ckl_apply_now_in_touch.last_name"
+
+                            />
                         </div>
                         <div class="form-group">
-                            <input class="form-email  broker-form-email" type="email" placeholder="Email (required)"
-                                required>
-                            <input class="form-tel  broker-form-tel" type="tel" placeholder="Phone number (required)"
-                                required>
+                            <input
+                                class="form-email broker-form-email"
+                                type="email"
+                                placeholder="Email (required)"
+                                v-model="mainStore.ckl_apply_now_in_touch.email"
+                            />
+                            <input
+                                class="form-tel broker-form-tel"
+                                type="tel"
+                                placeholder="Phone number (required)"
+                                v-model="mainStore.ckl_apply_now_in_touch.phone"
+                            />
                         </div>
                         <div class="form-group">
-                            <select class="option-selection" required>
-                                <option value="Fix and flip" disabled selected>Fix & Flip</option>
+                            <select class="option-selection" v-model="mainStore.ckl_apply_now_in_touch.fix_flip">
+                                <option value="" disabled selected>Fix & Flip</option>
                                 <option value="Rental">Rental</option>
                                 <option value="vacation and rental">Vacation Rental</option>
                                 <option value="Construction">Construction</option>
@@ -443,33 +461,56 @@ onMounted(() => {
                         <div class="radio-form-group">
                             <p class="form-paragraph">Do you have active deal(s) that need funding?</p>
                             <div class="radio-form">
-                                <label><input type="radio" name="approval" value="yes" required> Yes</label>
-                                <label><input type="radio" name="approval" value="no" required> No</label>
+                                <label>
+                                    <input
+                                        type="radio"
+                                        name="active_deals_need_funding"
+                                        value="yes"
+                                        v-model="mainStore.ckl_apply_now_in_touch.active_deals_need_funding"
+                                    />
+                                    Yes
+                                </label>
+                                <label>
+                                    <input
+                                        type="radio"
+                                        name="active_deals_need_funding"
+                                        value="no"
+                                        v-model="mainStore.ckl_apply_now_in_touch.active_deals_need_funding"
+                                    />
+                                    No
+                                </label>
                             </div>
                         </div>
                         <div class="sold-deal-form">
                             <label for="experience" class="form-paragraph">Experience (number of deals sold)</label>
                             <div class="form-group">
-                                <select class="option-selection" required>
-                                    <option value="" disabled selected>Beginner (0 to 4 deals)</option>
-                                    <option value="intermediate">Intermediate (5 to 10 deals)</option>
-                                    <option value="expert">Expert (11+ deals)</option>
+                                <select
+                                    class="option-selection"
+                                    v-model="mainStore.ckl_apply_now_in_touch.experience_no_of_deal_sold"
+                                >
+                                    <option value="" disabled selected>Experience (number of deals sold)</option>
+                                    <option value="Beginner (0 to 4 deals)">Beginner (0 to 4 deals)</option>
+                                    <option value="Intermediate (5 to 10 deals)">Intermediate (5 to 10 deals)</option>
+                                    <option value="Expert (11+ deals)">Expert (11+ deals)</option>
                                 </select>
                             </div>
                         </div>
-                        <div class="radio-form-group">
-                            <p class="form-paragraph">Are you an approved Capital Key broker?</p>
-                            <div class="radio-form">
-                                <label><input type="radio" name="approval" value="yes" required> Yes</label>
-                                <label><input type="radio" name="approval" value="no" required> No</label>
-                            </div>
-                        </div>
-                        <textarea class="deal-summary" placeholder="Describe the deal summary" required></textarea>
+                        <textarea
+                            class="deal-summary"
+                            placeholder="Describe the deal summary"
+                            v-model="mainStore.ckl_apply_now_in_touch.deal_summary"
+                        ></textarea>
                         <div class="form-group">
-                            <input class="form-text hear-text investor-hear" type="text"
-                                placeholder="How Did You Hear About Us? (required)">
+                            <input
+                                class="form-text hear-text investor-hear"
+                                type="text"
+                                placeholder="How Did You Hear About Us? (required)"
+                                v-model="mainStore.ckl_apply_now_in_touch.where_did_hear_about_us"
+                            />
                         </div>
-                        <button class="dark-btn">Submit</button>
+                        <span v-if="mainStore.ckl_apply_now_in_touch_error" class="text-danger fw-bold">{{ mainStore.ckl_apply_now_in_touch_error }}</span>
+                        <span v-if="mainStore.ckl_apply_now_in_touch_message" class="text-success fw-bold">{{ mainStore.ckl_apply_now_in_touch_message }}</span>
+                        <span class="dark-btn submit-button" @click="!mainStore.ckl_apply_now_in_touch_loading && mainStore.submitCKLApplyNowInTouch()">SUBMIT <div v-if="mainStore.ckl_apply_now_in_touch_loading" class="spinner-border text-light spinner-button"></div></span>
                     </form>
                 </div>
             </div>
