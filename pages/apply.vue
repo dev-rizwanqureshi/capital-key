@@ -1,3 +1,14 @@
+<script setup>
+import { ref, onMounted } from 'vue'
+import { useMainJS } from '../stores/main.js'
+const mainStore =  useMainJS();
+
+onMounted(() => {
+
+})
+
+</script>
+
 <template>
 <section class="apply-section">
     <div class="container">
@@ -25,25 +36,55 @@
             </div>
             <div class="form-parent apply-form">
                 <h3 class="form-heading apply-heading">Apply now and we will get in touch</h3>
+                {{ mainStore.request_a_quote }}
                 <form class="default-form">
                     <div class="form-group">
-                        <input class="form-text broker-form-text" type="text" placeholder="Name (required)"
-                            required>
-                        <input class="form-text broker-form-text" type="text" placeholder="Last name (required)"
-                            required>
+                        <input
+                            v-model="mainStore.request_a_quote.first_name"
+                            class="form-text broker-form-text"
+                            type="text"
+                            placeholder="Name (required)"
+                            required
+                        />
+                        <input
+                            v-model="mainStore.request_a_quote.last_name"
+                            class="form-text broker-form-text"
+                            type="text"
+                            placeholder="Last name (required)"
+                            required
+                        />
                     </div>
                     <div class="form-group">
-                        <input class="form-email  broker-form-email" type="email" placeholder="Email (required)"
-                            required>
-                        <input class="form-tel  broker-form-tel" type="tel" placeholder="Phone number (required)"
-                            required>
+                        <input
+                            v-model="mainStore.request_a_quote.email"
+                            class="form-email broker-form-email"
+                            type="email"
+                            placeholder="Email (required)"
+                            required
+                        />
+                        <input
+                            v-model="mainStore.request_a_quote.phone"
+                            class="form-tel broker-form-tel"
+                            type="tel"
+                            placeholder="Phone number (required)"
+                            required
+                        />
                     </div>
                     <div class="form-group">
-                        <input class="form-text property-form-text" type="text"
-                            placeholder="Property State (required)" required>
+                        <input
+                            v-model="mainStore.request_a_quote.property_state"
+                            class="form-text property-form-text"
+                            type="text"
+                            placeholder="Property State (required)"
+                            required
+                        />
                     </div>
                     <div class="form-group">
-                        <select class="option-selection" required>
+                        <select
+                            v-model="mainStore.request_a_quote.loan_program"
+                            class="option-selection"
+                            required
+                        >
                             <option value="" disabled selected>Select a Loan Program</option>
                             <option value="Purchase">Purchase</option>
                             <option value="Refinance">Refinance</option>
@@ -54,29 +95,51 @@
                     </div>
                     <div class="default-input">
                         <label class="loan-heading" for="loan-purpose">Describe the purpose of loan.</label>
-                        <textarea class="loan-purpose"
-                            placeholder="e.g., Rate/Term Refinance, Cash-out, etc. Please Complete if Refinance or Other."></textarea>
+                        <textarea
+                            v-model="mainStore.request_a_quote.loan_purpose"
+                            class="loan-purpose"
+                            placeholder="e.g., Rate/Term Refinance, Cash-out, etc. Please Complete if Refinance or Other."
+                        ></textarea>
                     </div>
                     <div class="default-input">
                         <label class="loan-heading" for="loan-purpose">Describe the property type (required)</label>
-                        <textarea class="loan-purpose" placeholder="e.g., SFR, Land, Commercial, etc."></textarea>
+                        <textarea
+                            v-model="mainStore.request_a_quote.property_type"
+                            class="loan-purpose"
+                            placeholder="e.g., SFR, Land, Commercial, etc."
+                        ></textarea>
                     </div>
                     <div class="form-group">
-                        <select class="option-selection" requried>
+                        <select
+                            v-model="mainStore.request_a_quote.close_time"
+                            class="option-selection"
+                            required
+                        >
                             <option value="" disabled selected>Request a Close Time</option>
-                            <option value="days">5 Days</option>
-                            <option value="days">8 Days</option>
-                            <option value="days">14 Days</option>
-                            <option value="days">30 Days</option>
-                            <option value="days">More Than 30 Days</option>
+                            <option value="5 Days">5 Days</option>
+                            <option value="8 Days">8 Days</option>
+                            <option value="14 Days">14 Days</option>
+                            <option value="30 Days">30 Days</option>
+                            <option value="More Than 30 Days">More Than 30 Days</option>
                         </select>
                     </div>
-                    <textarea class="deal-summary" placeholder="Describe the deal summary" required></textarea>
+                    <textarea
+                        v-model="mainStore.request_a_quote.deal_summary"
+                        class="deal-summary"
+                        placeholder="Describe the deal summary"
+                        required
+                    ></textarea>
                     <div class="form-group">
-                        <input class="form-text hear-text" type="text"
-                            placeholder="How Did You Hear About Us? (required)">
+                        <input
+                            v-model="mainStore.request_a_quote.hear_about_us"
+                            class="form-text hear-text"
+                            type="text"
+                            placeholder="How Did You Hear About Us? (required)"
+                        />
                     </div>
-                    <button class="dark-btn">Submit</button>
+                    <span v-if="mainStore.request_a_quote_error" class="text-danger fw-bold">{{ mainStore.request_a_quote_error }}</span>
+                    <span v-if="mainStore.request_a_quote_message" class="text-success fw-bold">{{ mainStore.request_a_quote_message }}</span>
+                    <span class="dark-btn submit-button" @click="!mainStore.request_a_quote_loading && mainStore.submitRequestAQuote()">SUBMIT <div v-if="mainStore.request_a_quote_loading" class="spinner-border text-light spinner-button"></div></span>
                 </form>
 
             </div>

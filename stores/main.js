@@ -15,6 +15,9 @@ export const useMainJS = defineStore({
         ckl_dedicated_loan_error: null,
         ckl_dedicated_loan_message: null,
 
+
+
+
         ckl_apply_now_in_touch_loading: false,
         ckl_apply_now_in_touch : {
             first_name: '',
@@ -28,7 +31,28 @@ export const useMainJS = defineStore({
             where_did_hear_about_us: '',
         },
         ckl_apply_now_in_touch_error: null,
-        ckl_apply_now_in_touch_message: null
+        ckl_apply_now_in_touch_message: null,
+
+
+
+
+
+        request_a_quote_loading: false,
+        request_a_quote: {
+            first_name: '',
+            last_name: '',
+            email: '',
+            phone: '',
+            property_state: '',
+            loan_program: '',
+            loan_purpose: '',
+            property_type: '',
+            close_time: '',
+            deal_summary: '',
+            hear_about_us: '',
+        },
+        request_a_quote_error: null,
+        request_a_quote_message: null,
     }),
     actions: {
 
@@ -186,5 +210,89 @@ export const useMainJS = defineStore({
                 where_did_hear_about_us: '',
             };
         },
+
+        validateRequestAQuote() {
+
+            this.request_a_quote_message = null;
+            this.request_a_quote_error = null;
+            const requiredFields = [
+                { key: 'first_name', label: 'First Name' },
+                { key: 'last_name', label: 'Last Name' },
+                { key: 'email', label: 'Email' },
+                { key: 'phone', label: 'Phone' },
+                { key: 'property_state', label: 'Property State' },
+                { key: 'loan_program', label: 'Loan Program' },
+                { key: 'loan_purpose', label: 'Loan Purpose' },
+                { key: 'property_type', label: 'Property Type' },
+                { key: 'close_time', label: 'Close Time' },
+                { key: 'deal_summary', label: 'Deal Summary' },
+                { key: 'hear_about_us', label: 'How Did You Hear About Us' },
+            ];
+
+            for (const field of requiredFields) {
+                if (!this.request_a_quote[field.key]) {
+                    this.request_a_quote_error = `${field.label} is required.`;
+                    return false;
+                }
+            }
+
+            return true;
+        },
+        resetRequestAQuote() {
+            this.request_a_quote =  {
+                first_name: '',
+                last_name: '',
+                email: '',
+                phone: '',
+                property_state: '',
+                loan_program: '',
+                loan_purpose: '',
+                property_type: '',
+                close_time: '',
+                deal_summary: '',
+                hear_about_us: '',
+            }
+        },
+        async submitRequestAQuote() {
+            let vm = this;
+            if (!this.validateRequestAQuote()) {
+                return false;
+            }
+
+            vm.request_a_quote_loading = true;
+
+            const scriptURL = 'https://script.google.com/macros/s/AKfycby_vlftFV2rYWzBz9xLBRJrUUsaxygRBI3qYsBCm8QrhjOEqoGJXU1RS_IX-RqpAvFlcw/exec';
+
+
+            const formData = new FormData();
+
+            for (const [key, value] of Object.entries(vm.request_a_quote)) {
+                formData.append(key, value);
+            }
+
+            formData.append('name', vm.request_a_quote.first_name + ' ' + vm.request_a_quote.last_name);
+
+            fetch(scriptURL, { method: 'POST', body: formData })
+                .then(response => {
+                    console.log('response')
+                    console.dir(response)
+                    if (response.ok) {
+                        console.log('ok')
+                        vm.request_a_quote_message = 'Form submitted successfully!';
+                        vm.request_a_quote_error = null;
+                        vm.resetRequestAQuote();
+                    } else {
+                        console.log('not ok')
+
+                    }
+                })
+                .catch(error => {
+                    console.error('Error!', error.message)
+                    vm.request_a_quote_error = 'API error';
+                }).finally(() => {
+                vm.request_a_quote_loading = false;
+            })
+
+        }
     },
 });
