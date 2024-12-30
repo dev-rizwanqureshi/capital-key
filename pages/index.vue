@@ -1,5 +1,7 @@
 <script setup>
 import { ref, onMounted } from 'vue'
+import { useMainJS } from '../stores/main.js'
+const mainStore =  useMainJS();
 
 onMounted(() => {
 
@@ -23,12 +25,15 @@ onMounted(() => {
                     </p>
 
                     <div class="loan-advisor-user-information">
+
                         <p class="form-heading">Connect with a dedicated loan advisors now!</p>
-                        <form class="form-section" action="action-page.php">
-                            <input class="form-text" type="text" placeholder="Name and Last name">
-                            <input class="form-email" type="email" placeholder="Email">
-                            <input class="form-tel" type="tel" placeholder="Phone number">
-                            <button class="dark-btn submit-button">SUBMIT</button>
+                        <form class="form-section">
+                            <input class="form-text" type="text" placeholder="Name and Last name" v-model="mainStore.ckl_dedicated_loan.name">
+                            <input class="form-email" type="email" placeholder="Email" v-model="mainStore.ckl_dedicated_loan.email">
+                            <input class="form-tel" type="tel" placeholder="Phone number" v-model="mainStore.ckl_dedicated_loan.phone">
+                            <span v-if="mainStore.ckl_dedicated_loan_error" class="text-danger fw-bold">{{ mainStore.ckl_dedicated_loan_error }}</span>
+                            <span v-if="mainStore.ckl_dedicated_loan_message" class="text-success fw-bold">{{ mainStore.ckl_dedicated_loan_message }}</span>
+                            <span class="dark-btn submit-button" @click="!mainStore.ckl_dedicated_loan_loading && mainStore.cklDedicatedLoan()">SUBMIT <div v-if="mainStore.ckl_dedicated_loan_loading" class="spinner-border text-light spinner-button"></div></span>
                         </form>
                     </div>
 
