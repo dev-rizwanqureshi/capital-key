@@ -7,6 +7,14 @@ onMounted(() => {
 
 })
 
+
+useSeoMeta({
+    title: 'Investor Opportunities - Capital Key Lending',
+    ogTitle: 'Investor Opportunities - Capital Key Lending',
+    description: "Unlock your investment potential with Capital Key Lending's tailored credit solutions. Partner with seasoned professionals in real estate finance to grow your portfolio confidently.",
+    ogDescription: "Unlock your investment potential with Capital Key Lending's tailored credit solutions. Partner with seasoned professionals in real estate finance to grow your portfolio confidently.",
+});
+
 </script>
 
 
@@ -46,7 +54,6 @@ onMounted(() => {
                 <div class="form-parent apply-form">
                     <h3 class="form-heading apply-heading">Investor Inquiry</h3>
 
-                    {{ mainStore.investor_inquiry }}
                     <form class="default-form">
                         <div class="form-group">
                             <input v-model="mainStore.investor_inquiry.first_name" class="form-text broker-form-text" type="text" placeholder="First name (required)"
@@ -66,7 +73,7 @@ onMounted(() => {
                         </div>
                         <div class="default-input">
                             <label class="loan-heading" for="loan-purpose">Describe the property type (required)</label>
-                            <textarea v-model="mainStore.investor_inquiry.purpose_of_loan" class="loan-purpose" placeholder="e.g., SFR, Land, Commercial, etc."></textarea>
+                            <textarea v-model="mainStore.investor_inquiry.property_type" class="loan-purpose" placeholder="e.g., SFR, Land, Commercial, etc."></textarea>
                         </div>
                         <div class="default-label-form">
                             <label class="default-label" for="lien-position">Lien Position (required)</label>
@@ -82,11 +89,11 @@ onMounted(() => {
                             </label>
                             <select v-model="mainStore.investor_inquiry.term_limits" class="option-selection" required>
                                 <option value="" disabled selected>Select an options</option>
-                                <option value="months">3-6 Months</option>
-                                <option value="months">6-12 Months</option>
-                                <option value="months">12-18 Months</option>
-                                <option value="months">2-4 Years</option>
-                                <option value="months">4+ Years</option>
+                                <option value="3-6 Months">3-6 Months</option>
+                                <option value="6-12 Months">6-12 Months</option>
+                                <option value="12-18 Months">12-18 Months</option>
+                                <option value="2-4 Years">2-4 Years</option>
+                                <option value="4+ Years">4+ Years</option>
                             </select>
                         </div>
                         <div class="default-label-form">
@@ -95,14 +102,14 @@ onMounted(() => {
                             </label>
                             <select v-model="mainStore.investor_inquiry.return_on_investment" class="option-selection" required>
                                 <option value="" disabled selected>Select an option</option>
-                                <option value="5%">5.00%</option>
-                                <option value="">6.00%</option>
-                                <option value="">7.00%</option>
-                                <option value="">8.00%</option>
-                                <option value="">9.00%</option>
-                                <option value="">10.00%</option>
-                                <option value="">11.00%</option>
-                                <option value="12%">12.00%</option>
+                                <option value="5.00%">5.00%</option>
+                                <option value="6.00%">6.00%</option>
+                                <option value="7.00%">7.00%</option>
+                                <option value="8.00%">8.00%</option>
+                                <option value="9.00%">9.00%</option>
+                                <option value="10.00%">10.00%</option>
+                                <option value="11.00%">11.00%</option>
+                                <option value="12.00%">12.00%</option>
                             </select>
                         </div>
                         <div class="default-label-form">

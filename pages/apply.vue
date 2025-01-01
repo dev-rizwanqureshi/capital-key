@@ -7,6 +7,14 @@ onMounted(() => {
 
 })
 
+
+useSeoMeta({
+    title: 'Apply for Real Estate Financing - Capital Key Lending',
+    ogTitle: 'Apply for Real Estate Financing - Capital Key Lending',
+    description: "Take the first step towards realizing your investment goals with Capital Key Lending. Apply today for flexible loan programs and personalized support from experienced professionals.",
+    ogDescription: "Take the first step towards realizing your investment goals with Capital Key Lending. Apply today for flexible loan programs and personalized support from experienced professionals.",
+});
+
 </script>
 
 <template>

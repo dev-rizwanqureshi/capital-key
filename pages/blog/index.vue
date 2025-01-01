@@ -4,11 +4,11 @@ import $ from 'jquery';
 import axios from "axios";
 
 useSeoMeta({
-    title: 'Pacific Legacy Capital Blog - Insights on Land Financing and Note Acquisition',
-    ogTitle: 'Pacific Legacy Capital Blog - Insights on Land Financing and Note Acquisition',
-    description: "Stay informed with expert insights and the latest trends in land financing and land note acquisition. Read articles from Pacific Legacy Capital to enhance your investment knowledge.",
-    ogDescription: "Stay informed with expert insights and the latest trends in land financing and land note acquisition. Read articles from Pacific Legacy Capital to enhance your investment knowledge.",
-})
+    title: 'Capital Key Lending Blog - Expert Insights on Real Estate Financing',
+    ogTitle: 'Capital Key Lending Blog - Expert Insights on Real Estate Financing',
+    description: "Stay ahead in the real estate market with Capital Key Lending's expert insights and latest trends. Read our blog to enhance your knowledge and make informed investment decisions.",
+    ogDescription: "Stay ahead in the real estate market with Capital Key Lending's expert insights and latest trends. Read our blog to enhance your knowledge and make informed investment decisions.",
+});
 
 
 onMounted(() => {
@@ -43,7 +43,7 @@ const articlesObject = ref({});
 const category_id = ref(null);
 const search = ref(null);
 const loader = ref(false);
-const website = 'pacificlegacycapital';
+const website = 'capitalkeylending';
 
 
 function onSelectCategory(id) {

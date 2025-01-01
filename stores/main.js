@@ -336,8 +336,8 @@ export const useMainJS = defineStore({
 
         validateInvestorInquiry() {
 
-            this.request_a_quote_message = null;
-            this.request_a_quote_error = null;
+            this.investor_inquiry_error = null;
+            this.investor_inquiry_message = null;
             const requiredFields = [
                 { key: 'first_name', label: 'First Name' },
                 { key: 'last_name', label: 'Last Name' },
@@ -357,9 +357,14 @@ export const useMainJS = defineStore({
                 { key: 'where_did_hear_about_us', label: 'How Did You Hear About Us' },
             ];
 
+            if(this.investor_inquiry.investment_participation_mortgage === '' && this.investor_inquiry.investment_participation_equity === '') {
+                this.investor_inquiry_error = `Investment participation is required.`;
+                return false;
+            }
+
             for (const field of requiredFields) {
-                if (!this.request_a_quote[field.key]) {
-                    this.request_a_quote_error = `${field.label} is required.`;
+                if (!this.investor_inquiry[field.key]) {
+                    this.investor_inquiry_error = `${field.label} is required.`;
                     return false;
                 }
             }
@@ -389,6 +394,7 @@ export const useMainJS = defineStore({
             }
         },
         async submitInvestorInquiry() {
+            console.log('submitInvestorInquiry');
             let vm = this;
             if (!this.validateInvestorInquiry()) {
                 return false;
@@ -396,8 +402,7 @@ export const useMainJS = defineStore({
 
             vm.investor_inquiry_loading = true;
 
-            const scriptURL = 'https://script.google.com/macros/s/AKfycby_vlftFV2rYWzBz9xLBRJrUUsaxygRBI3qYsBCm8QrhjOEqoGJXU1RS_IX-RqpAvFlcw/exec';
-
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbyaKKzhQFnCd8ODgkog8gBxVwNi6Xqqt9AmD3k0-XhGppaFqXbUMOMnAFjaVmmOFM2Tyw/exec';
 
             const formData = new FormData();
 

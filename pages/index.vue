@@ -7,6 +7,14 @@ onMounted(() => {
 
 })
 
+
+useSeoMeta({
+    title: 'Capital Key Lending - Flexible Real Estate Financing Solutions',
+    ogTitle: 'Capital Key Lending - Flexible Real Estate Financing Solutions',
+    description: "Explore Capital Key Lending's loan programs designed to empower real estate investors. Leverage property values with our flexible financing options to implement your investment plans.",
+    ogDescription: "Explore Capital Key Lending's loan programs designed to empower real estate investors. Leverage property values with our flexible financing options to implement your investment plans.",
+});
+
 </script>
 
 
