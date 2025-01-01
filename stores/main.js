@@ -53,6 +53,35 @@ export const useMainJS = defineStore({
         },
         request_a_quote_error: null,
         request_a_quote_message: null,
+
+
+
+
+
+
+        investor_inquiry_loading: false,
+        investor_inquiry: {
+            first_name: '',
+            last_name: '',
+            email: '',
+            phone: '',
+            property_state: '',
+            property_type: '',
+            lien_position: '',
+            term_limits: '',
+            return_on_investment: '',
+            loan_to_value: '',
+            loan_amount: '',
+            investment_participation_mortgage:'',
+            investment_participation_equity:'',
+            fund_available: '',
+            availability_of_funds: '',
+            purpose_of_loan: '',
+            additional_details: '',
+            where_did_hear_about_us: '',
+        },
+        investor_inquiry_error: null,
+        investor_inquiry_message: null,
     }),
     actions: {
 
@@ -211,6 +240,12 @@ export const useMainJS = defineStore({
             };
         },
 
+
+
+
+
+
+
         validateRequestAQuote() {
 
             this.request_a_quote_message = null;
@@ -293,6 +328,107 @@ export const useMainJS = defineStore({
                 vm.request_a_quote_loading = false;
             })
 
+        },
+
+
+
+
+
+        validateInvestorInquiry() {
+
+            this.request_a_quote_message = null;
+            this.request_a_quote_error = null;
+            const requiredFields = [
+                { key: 'first_name', label: 'First Name' },
+                { key: 'last_name', label: 'Last Name' },
+                { key: 'email', label: 'Email' },
+                { key: 'phone', label: 'Phone' },
+                { key: 'property_state', label: 'Property State' },
+                { key: 'property_type', label: 'Property Type' },
+                { key: 'lien_position', label: 'Lien position' },
+                { key: 'term_limits', label: 'Term limits' },
+                { key: 'return_on_investment', label: 'Return on investment' },
+                { key: 'loan_to_value', label: 'Loan to value' },
+                { key: 'loan_amount', label: 'Loan Amount' },
+                { key: 'fund_available', label: 'Fund available' },
+                { key: 'availability_of_funds', label: 'Availability of funds' },
+                { key: 'purpose_of_loan', label: 'Purpose of loan' },
+                { key: 'additional_details', label: 'Additional Details' },
+                { key: 'where_did_hear_about_us', label: 'How Did You Hear About Us' },
+            ];
+
+            for (const field of requiredFields) {
+                if (!this.request_a_quote[field.key]) {
+                    this.request_a_quote_error = `${field.label} is required.`;
+                    return false;
+                }
+            }
+
+            return true;
+        },
+        resetInvestorInquiry() {
+            this.investor_inquiry = {
+                first_name: '',
+                last_name: '',
+                email: '',
+                phone: '',
+                property_state: '',
+                property_type: '',
+                lien_position: '',
+                term_limits: '',
+                return_on_investment: '',
+                loan_to_value: '',
+                loan_amount: '',
+                investment_participation_mortgage:'',
+                investment_participation_equity:'',
+                fund_available: '',
+                availability_of_funds: '',
+                purpose_of_loan: '',
+                additional_details: '',
+                where_did_hear_about_us: '',
+            }
+        },
+        async submitInvestorInquiry() {
+            let vm = this;
+            if (!this.validateInvestorInquiry()) {
+                return false;
+            }
+
+            vm.investor_inquiry_loading = true;
+
+            const scriptURL = 'https://script.google.com/macros/s/AKfycby_vlftFV2rYWzBz9xLBRJrUUsaxygRBI3qYsBCm8QrhjOEqoGJXU1RS_IX-RqpAvFlcw/exec';
+
+
+            const formData = new FormData();
+
+            for (const [key, value] of Object.entries(vm.investor_inquiry)) {
+                formData.append(key, value);
+            }
+
+            formData.append('name', vm.investor_inquiry.first_name + ' ' + vm.investor_inquiry.last_name);
+
+            fetch(scriptURL, { method: 'POST', body: formData })
+                .then(response => {
+                    console.log('response')
+                    console.dir(response)
+                    if (response.ok) {
+                        console.log('ok')
+                        vm.investor_inquiry_message = 'Form submitted successfully!';
+                        vm.investor_inquiry_error = null;
+                        vm.resetInvestorInquiry();
+                    } else {
+                        console.log('not ok')
+
+                    }
+                })
+                .catch(error => {
+                    console.error('Error!', error.message)
+                    vm.investor_inquiry_error = 'API error';
+                }).finally(() => {
+                vm.investor_inquiry_loading = false;
+            })
+
         }
+
     },
 });

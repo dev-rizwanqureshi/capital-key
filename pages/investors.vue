@@ -1,3 +1,15 @@
+<script setup>
+import { ref, onMounted } from 'vue'
+import { useMainJS } from '../stores/main.js'
+const mainStore =  useMainJS();
+
+onMounted(() => {
+
+})
+
+</script>
+
+
 <template>
     <section class="apply-section investor-section">
         <div class="container">
@@ -33,30 +45,32 @@
                 </div>
                 <div class="form-parent apply-form">
                     <h3 class="form-heading apply-heading">Investor Inquiry</h3>
+
+                    {{ mainStore.investor_inquiry }}
                     <form class="default-form">
                         <div class="form-group">
-                            <input class="form-text broker-form-text" type="text" placeholder="Name (required)"
+                            <input v-model="mainStore.investor_inquiry.first_name" class="form-text broker-form-text" type="text" placeholder="First name (required)"
                                 required>
-                            <input class="form-text broker-form-text" type="text" placeholder="Last name (required)"
-                                required>
-                        </div>
-                        <div class="form-group">
-                            <input class="form-email  broker-form-email" type="email" placeholder="Email (required)"
-                                required>
-                            <input class="form-tel  broker-form-tel" type="tel" placeholder="Phone number (required)"
+                            <input v-model="mainStore.investor_inquiry.last_name" class="form-text broker-form-text" type="text" placeholder="Last name (required)"
                                 required>
                         </div>
                         <div class="form-group">
-                            <input class="form-text property-form-text" type="text"
+                            <input v-model="mainStore.investor_inquiry.email" class="form-email  broker-form-email" type="email" placeholder="Email (required)"
+                                required>
+                            <input v-model="mainStore.investor_inquiry.phone" class="form-tel  broker-form-tel" type="tel" placeholder="Phone number (required)"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <input v-model="mainStore.investor_inquiry.property_state" class="form-text property-form-text" type="text"
                                 placeholder="Property State (required)" required>
                         </div>
                         <div class="default-input">
                             <label class="loan-heading" for="loan-purpose">Describe the property type (required)</label>
-                            <textarea class="loan-purpose" placeholder="e.g., SFR, Land, Commercial, etc."></textarea>
+                            <textarea v-model="mainStore.investor_inquiry.purpose_of_loan" class="loan-purpose" placeholder="e.g., SFR, Land, Commercial, etc."></textarea>
                         </div>
                         <div class="default-label-form">
                             <label class="default-label" for="lien-position">Lien Position (required)</label>
-                            <select class="option-selection" requried>
+                            <select v-model="mainStore.investor_inquiry.lien_position" class="option-selection" required>
                                 <option value="" disabled selected>Select multiple options</option>
                                 <option value="1st">1st</option>
                                 <option value="2nd">2nd</option>
@@ -66,8 +80,8 @@
                             <label class="default-label" for="lien-position">Term Limits (required)
                                 <span class="default-label-sub-heading">Check length of acceptable loan terms.</span>
                             </label>
-                            <select class="option-selection" requried>
-                                <option value="" disabled selected>Select multiple options</option>
+                            <select v-model="mainStore.investor_inquiry.term_limits" class="option-selection" required>
+                                <option value="" disabled selected>Select an options</option>
                                 <option value="months">3-6 Months</option>
                                 <option value="months">6-12 Months</option>
                                 <option value="months">12-18 Months</option>
@@ -79,7 +93,7 @@
                             <label class="default-label" for="lien-position">Return on Investment (required)
                                 <span class="default-label-sub-heading">Pick lowest acceptable rate.</span>
                             </label>
-                            <select class="option-selection" requried>
+                            <select v-model="mainStore.investor_inquiry.return_on_investment" class="option-selection" required>
                                 <option value="" disabled selected>Select an option</option>
                                 <option value="5%">5.00%</option>
                                 <option value="">6.00%</option>
@@ -95,7 +109,7 @@
                             <label class="default-label" for="lien-position">Loan-To-Value (required)
                                 <span class="default-label-sub-heading">Pick highest acceptable LTV.</span>
                             </label>
-                            <select class="option-selection" requried>
+                            <select v-model="mainStore.investor_inquiry.loan_to_value" class="option-selection" required>
                                 <option value="" disabled selected>Select an option</option>
                                 <option value="40%">40%</option>
                                 <option value="50%">50%</option>
@@ -112,27 +126,27 @@
                                 <span class="default-label-sub-heading">Provide your single transaction lending
                                     limit.</span>
                             </label>
-                            <input class="form-text broker-form-text" type="text" placeholder="$" required>
+                            <input v-model="mainStore.investor_inquiry.loan_amount" class="form-text broker-form-text" type="number" placeholder="$" required>
                         </div>
 
                         <div class="checkbox-group">Investment Participation (required)</div>
 
                         <div class="checkbox-form">
-                            <input class="checkbox-input" type="checkbox" id="mortgage" name="participation" />
+                            <input v-model="mainStore.investor_inquiry.investment_participation_mortgage" class="checkbox-input" type="checkbox" id="mortgage" name="participation" />
                             <label class="checkbox-label" for="mortgage">Mortgage / Trust Deed</label>
                         </div>
 
                         <div class="checkbox-form">
-                            <input class="checkbox-input" type="checkbox" id="equity" name="participation" />
+                            <input v-model="mainStore.investor_inquiry.investment_participation_equity" class="checkbox-input" type="checkbox" id="equity" name="participation" />
                             <label class="checkbox-label" for="equity">Equity / Joint Venture</label>
                         </div>
                         <div class="default-label-form">
                             <label class="default-label" for="lien-position">Fund Available (required)</label>
-                            <input class="form-text broker-form-text" type="text" placeholder="$" required>
+                            <input v-model="mainStore.investor_inquiry.fund_available" class="form-text broker-form-text" type="number" placeholder="$" required>
                         </div>
                         <div class="default-label-form">
                             <label class="default-label" for="lien-position">Availability of Funds (required)</label>
-                            <select class="option-selection" requried>
+                            <select v-model="mainStore.investor_inquiry.availability_of_funds" class="option-selection" required>
                                 <option value="" disabled selected>Select an option</option>
                                 <option value="immediately">immediately</option>
                                 <option value="one week">one week</option>
@@ -142,16 +156,23 @@
                         </div>
                         <div class="default-input">
                             <label class="loan-heading" for="loan-purpose">Describe the purpose of loan.</label>
-                            <textarea class="loan-purpose"
+                            <textarea v-model="mainStore.investor_inquiry.purpose_of_loan" class="loan-purpose"
                                 placeholder="e.g., Rate/Term Refinance, Cash-out, etc. Please Complete if Refinance or Other."></textarea>
                         </div>
 
-                        <textarea class="deal-summary" placeholder="Additional Information" required></textarea>
+                        <textarea class="deal-summary" placeholder="Additional Information" v-model="mainStore.investor_inquiry.additional_details" required></textarea>
                         <div class="form-group">
-                            <input class="form-text hear-text investor-hear" type="text"
+                            <input v-model="mainStore.investor_inquiry.where_did_hear_about_us" class="form-text hear-text investor-hear" type="text"
                                 placeholder="How Did You Hear About Us? (required)">
                         </div>
-                        <button class="dark-btn">Submit</button>
+
+                        <span v-if="mainStore.investor_inquiry_error" class="text-danger fw-bold">{{ mainStore.investor_inquiry_error }}</span>
+                        <span v-if="mainStore.investor_inquiry_message" class="text-success fw-bold">{{ mainStore.investor_inquiry_message }}</span>
+
+
+                        <span class="dark-btn submit-button" @click="!mainStore.investor_inquiry_loading && mainStore.submitInvestorInquiry()">SUBMIT <div v-if="mainStore.investor_inquiry_loading" class="spinner-border text-light spinner-button"></div></span>
+
+
                     </form>
 
                 </div>

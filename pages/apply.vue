@@ -36,7 +36,6 @@ onMounted(() => {
             </div>
             <div class="form-parent apply-form">
                 <h3 class="form-heading apply-heading">Apply now and we will get in touch</h3>
-                {{ mainStore.request_a_quote }}
                 <form class="default-form">
                     <div class="form-group">
                         <input
